@@ -38,12 +38,14 @@ def get_occupation(data, hometown)
   end
 end
 
+#cannot get this to round up for season 10!
+
 def get_average_age_for_season(data, season)
   age = 0
   count = 0
   data[season].each do |contestant_data|
-    age += (contestant_data["age"]).to_i
+    age += (contestant_data["age"]).to_f
     count += 1
   end
-  (age / count).round(0)
+  (age / count).round
 end
